@@ -8,13 +8,4 @@ RUN mkdir /opt/aspectj && cd /opt/aspectj &&\
 
 # Pull petclinic
 RUN git clone https://github.com/stagemonitor/spring-petclinic.git
-
-# Build petclinic
-WORKDIR /spring-petclinic
-RUN rm src/main/resources/stagemonitor.properties
-
-ADD ./stagemonitor.properties /spring-petclinic/src/main/resources/stagemonitor.properties
-
-RUN mvn package
-
-RUN rm -rf /spring-petclinic
+RUN cd spring-petclinic ; mvn package ; cd .. ; rm -rf spring-petclinic 

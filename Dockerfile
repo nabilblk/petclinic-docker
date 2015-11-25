@@ -8,7 +8,7 @@ ADD ./setenv.sh /tomcat/bin/setenv.sh
 RUN git clone https://github.com/stagemonitor/spring-petclinic.git
 
 # Build petclinic
-#WORKDIR /spring-petclinic
+WORKDIR /spring-petclinic
 RUN rm src/main/resources/stagemonitor.properties
 
 ADD ./stagemonitor.properties /spring-petclinic/src/main/resources/stagemonitor.properties
