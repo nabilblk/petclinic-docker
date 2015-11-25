@@ -1,7 +1,5 @@
 FROM nabilblk/tomcat
 
-RUN rm -rf /spring-petclinic
-
 RUN rm -rf /tomcat/webapps/*
 
 ADD ./setenv.sh /tomcat/bin/setenv.sh
@@ -11,7 +9,7 @@ RUN git clone https://github.com/stagemonitor/spring-petclinic.git
 
 # Build petclinic
 WORKDIR /spring-petclinic
-#RUN rm /spring-petclinic/src/main/resources/stagemonitor.properties
+RUN rm src/main/resources/stagemonitor.properties
 
 ADD ./stagemonitor.properties /spring-petclinic/src/main/resources/stagemonitor.properties
 
