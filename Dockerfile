@@ -11,7 +11,7 @@ RUN git clone https://github.com/stagemonitor/spring-petclinic.git
 
 # Build petclinic
 WORKDIR /spring-petclinic
-RUN rm /spring-petclinic/src/main/resources/stagemonitor.properties
+#RUN rm /spring-petclinic/src/main/resources/stagemonitor.properties
 
 ADD ./stagemonitor.properties /spring-petclinic/src/main/resources/stagemonitor.properties
 
