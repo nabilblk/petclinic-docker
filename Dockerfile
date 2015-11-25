@@ -1,5 +1,7 @@
 FROM nabilblk/tomcat
 
+RUN rm -rf /spring-petclinic
+
 RUN rm -rf /tomcat/webapps/*
 
 ADD ./setenv.sh /tomcat/bin/setenv.sh
